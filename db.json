@@ -1,0 +1,47 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Juan",
+      "telefono": 102013313,
+      "email": "juan@sergio.com",
+      "empresa": "Challenge React"
+    },
+    {
+      "id": 2,
+      "nombre": "Karen",
+      "telefono": 138198313,
+      "email": "karen@sergio.com",
+      "empresa": "Challenge React"
+    },
+    {
+      "id": 3,
+      "nombre": "Josue",
+      "telefono": 31983913,
+      "email": "josue@sergio.com",
+      "empresa": "Challenge React"
+    },
+    {
+      "id": 4,
+      "nombre": "Miguel",
+      "telefono": 319381983,
+      "email": "miguel@sergio.com",
+      "empresa": "Challenge React"
+    },
+    {
+      "id": 5,
+      "nombre": "Pedro",
+      "telefono": 1398198938,
+      "email": "pedro@sergio.com",
+      "empresa": "Challenge React"
+    },
+    {
+      "nombre": "Sergio",
+      "empresa": "magia",
+      "email": "hohoh@GMAIL.COM",
+      "telefono": "213132",
+      "notas": "CHALLENGE",
+      "id": 6
+    }
+  ]
+}
