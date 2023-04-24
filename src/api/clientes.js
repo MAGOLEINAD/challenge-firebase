@@ -4,14 +4,17 @@ import { collection, getDocs,addDoc,deleteDoc,doc} from "firebase/firestore/lite
 import { FirebaseDB } from "../../firebase/config";
 
 
-export async function borrarCliente() {
+export async function borrarCliente(id,setClientes,clientes) {
   try {
-     await deleteDoc(doc(FirebaseDB, "clientes", "cliente"));
+     await deleteDoc(doc(FirebaseDB, "clientes", id));
+     setClientes(clientes.filter((cliente) => cliente.id !== id));
+
       console.log("Cliente Borrado");
     } catch (e) {
       console.error("No pude borrar Cliente: ", e);
     }
 }
+
 
 export async function agregarCliente(datos) {
     try {
@@ -31,7 +34,7 @@ export const obtenerClientes = async () => {
     const respuesta = await getDocs(collection(FirebaseDB, "clientes"));
     const arrayDeClientes = [];
     respuesta.forEach((doc) => {
-    arrayDeClientes.push(doc.data());
+    arrayDeClientes.push({...doc.data(),id:doc.id});
     });
 
     return arrayDeClientes;

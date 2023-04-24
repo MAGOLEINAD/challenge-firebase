@@ -19,7 +19,7 @@ const {pathname} = location
     <nav className="mt-10">
       <Link 
       className={`text-2xl block ${pathname === '/' ? 'text-blue-300':' text-white'}  mt-2 hover:text-blue-400`} 
-      to="/">Home</Link>
+      to="/">Listado de Clientes</Link>
       <Link 
       className={`text-2xl block ${pathname === '/nuevo/cliente' ? 'text-blue-300':' text-white'}  mt-2 hover:text-blue-400`} 
       to="/clientes/nuevo">Nuevo Cliente</Link>

@@ -2,6 +2,9 @@ import { useLoaderData } from "react-router-dom"
 import Cliente from "../components/Cliente";
 import { obtenerClientes } from "../api/clientes";
 import { std } from 'mathjs';
+import { useState } from "react";
+
+
 
 
 
@@ -15,12 +18,17 @@ export function loader() {
 
 const Index = () => {
   //Obtencion de Datos de api mediante el Hook de React Router
-  const clientes = useLoaderData()
-  const promedioEdad = clientes.reduce((acumulador, cliente) => acumulador + Number(cliente.edad), 0) / clientes.length;
-  const edadesClientes = clientes.map (cliente => cliente.edad)
-  const desvioEstandar = std(edadesClientes).toFixed(2)
+
+  const [clientes, setClientes] = useState(useLoaderData())
+  const promedioEdad = clientes.length > 0 && clientes.reduce((acumulador, cliente) => acumulador + Number(cliente.edad), 0) / clientes.length;
+  const edadesClientes = clientes.length > 0 && clientes.map (cliente => cliente.edad)
+  const desvioEstandar = clientes.length > 0 && std(edadesClientes).toFixed(2)
 
   console.log(clientes);
+
+
+
+
   return (
     <>
     <h1 className="font-black text-4xl text-blue-900">Clientes </h1>
@@ -38,7 +46,7 @@ const Index = () => {
         </thead>
        <tbody>
         {clientes.map (cliente => (
-            <Cliente cliente={cliente} key={cliente.nombre} />
+            <Cliente key={cliente.id} cliente={cliente} setClientes={setClientes} clientes={clientes} />
         ))}
        </tbody>
       </table>
