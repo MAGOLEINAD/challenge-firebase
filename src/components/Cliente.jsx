@@ -3,11 +3,38 @@
 import { useNavigate } from "react-router-dom"
 import useClientesContext from "../../hook/useContext"
 import { borrarCliente } from "../api/clientes"
+import Swal from "sweetalert2"
+
+
 
 
 /* eslint-disable react/prop-types */
 
+
+
 const Cliente = ({cliente,setClientes,clientes}) => {
+  const eliminar = () => {
+ 
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: "No podras deshacer esta accion",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, borralo!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        borrarCliente(id,setClientes,clientes)
+        Swal.fire(
+          'Borrado!',
+          'El registro fue borrado.',
+          'exito'
+        )
+      }
+    })
+   
+  }
   const Navigate = useNavigate()
     const {setModal,setCliente} = useClientesContext()
     const {nombre,apellido,edad,fecha,id} = cliente
@@ -38,7 +65,7 @@ const Cliente = ({cliente,setClientes,clientes}) => {
     </td>
     <td className="p-6">
       <div className="flex items-center justify-center">
-      <button onClick={()=>borrarCliente(id,setClientes,clientes)} className="p-6 text-xs text-red-800  font-bold uppercase cursor-pointer ">Eliminar</button>
+      <button onClick={eliminar} className="p-6 text-xs text-red-800  font-bold uppercase cursor-pointer ">Eliminar</button>
       <button onClick={modalDetalle} className="p-6 text-xs text-blue-800  font-bold uppercase cursor-pointer ">Detalle</button>
       <button onClick={verProyeccion} className="p-6 text-xs text-indigo-700 font-bold uppercase cursor-pointer ">Proyeccion</button>
       </div>

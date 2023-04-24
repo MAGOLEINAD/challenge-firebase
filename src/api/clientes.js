@@ -3,6 +3,9 @@ import { FirebaseDB } from "../../firebase/config";
 
 
 
+
+
+
 export async function borrarCliente(id,setClientes,clientes) {
   try {
      await deleteDoc(doc(FirebaseDB, "clientes", id));

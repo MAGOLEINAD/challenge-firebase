@@ -1,13 +1,19 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import useClientesContext from "../../hook/useContext";
+import { useNavigate } from "react-router-dom";
+
 
 const Proyeccion = () => {
+  const navigate = useNavigate()
   const { cliente } = useClientesContext();
   const espectativa = 76 - cliente.edad;
 
   return (
     <>
+     <button 
+      onClick={()=> navigate(-1)}
+      className="bg-blue-800 text-white Uppercase px-3 py-1 rounded-sm">Volver</button>
       {cliente ? (
         <div className=" flex max-h-full">
           <CircularProgressbar

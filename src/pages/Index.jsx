@@ -68,6 +68,7 @@ const {modal,setModal,clientes,setClientes} = useClientesContext()
       </table>
         <div className="flex mt-10 justify-between border border-gray-500 p-6">
         <h1 className=" font-bold text-2xl mr-8">Promedio de Edad: <span className="text-blue-700">{promedioEdad.toFixed(2)}</span> </h1>
+        <h1 className=" font-bold text-xl mr-2 ">Esperanza de Vida en Argentina: <span className="text-blue-700">76 años</span> </h1>
         <h1 className=" font-bold text-2xl ">Desviación estándar de edades: <span className="text-blue-700">{desvioEstandar}</span> </h1>
       </div>
       </>

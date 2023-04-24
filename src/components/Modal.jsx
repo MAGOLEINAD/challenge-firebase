@@ -27,7 +27,7 @@ const {setModal,cliente} = useClientesContext()
                 <input 
                     id="nombre"
                     type="text"
-                    className="mt-2 mx-auto rounded-md block w-1/2 p-3 bg-gray-50 text-black font-semibold space-x-6"
+                    className="mt-2 mx-auto rounded-md block w-1/3 p-3 bg-gray-50 text-black font-semibold space-x-6 text-2xl"
                     placeholder="Nombre del Cliente"
                     name="nombre"
                     value={cliente.nombre}
@@ -42,7 +42,7 @@ const {setModal,cliente} = useClientesContext()
                 <input 
                     id="apellido"
                     type="text"
-                    className="mt-2 mx-auto rounded-md block w-1/2 p-3 bg-gray-50 text-black font-semibold space-x-6"
+                    className="mt-2 mx-auto rounded-md block w-1/3 p-3 bg-gray-50 text-black font-semibold space-x-6 text-2xl"
                     placeholder="Apellido del Cliente"
                     name="apellido"
                     value={cliente.apellido}
@@ -59,7 +59,7 @@ const {setModal,cliente} = useClientesContext()
                 <input 
                     id="edad"
                     type="number"
-                    className="mt-2 mx-auto rounded-md block w-1/2 p-3 bg-gray-50 text-black font-semibold space-x-6"
+                    className="mt-2 mx-auto rounded-md block w-1/3 p-3 bg-gray-50 text-black font-semibold space-x-6 text-2xl"
                     placeholder="Edad del Cliente"
                     name="edad"
                     required
@@ -76,7 +76,7 @@ const {setModal,cliente} = useClientesContext()
                 <input 
                     id="fecha"
                     type="text"
-                    className="mt-2 mx-auto rounded-md block w-1/2 p-3 bg-gray-50 text-black font-semibold "
+                    className="mt-2 mx-auto rounded-md block w-1/3 p-3 bg-gray-50 text-black font-semibold text-2xl  "
                     placeholder="Fecha del Cliente"
                     name="fecha"
                     value={cliente.fecha}
