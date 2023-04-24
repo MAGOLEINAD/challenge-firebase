@@ -1,17 +1,30 @@
 import { Form, redirect, useNavigate } from "react-router-dom"
 import Formulario from "../components/Formulario"
 import { agregarCliente } from "../api/clientes"
-
-
-
-export  const action = async ({request}) => {
-  const formData = await request.formData()
-  const datos = Object.fromEntries(formData)
-  console.log(datos)
-  await agregarCliente(Object.fromEntries(formData))
-  return redirect('/')
+import Swal from 'sweetalert2'
+const disparar = () => {
  
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'El cliente se registro correctamente',
+    showConfirmButton: false,
+    timer: 1500
+  })
 }
+
+
+export const action = async ({request}) => {
+
+  const formData = await request.formData()
+  // const datos = Object.fromEntries(formData)
+  // // console.log(datos)
+  await agregarCliente(Object.fromEntries(formData))
+  disparar()
+  return redirect('/')
+}
+
+
 
 
 const NuevoCliente = () => {

@@ -12,6 +12,7 @@ const Formulario = () => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Nombre del Cliente"
                     name="nombre"
+                    required
                 />
             </div>
             <div className="mb-4">
@@ -25,6 +26,7 @@ const Formulario = () => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Apellido del Cliente"
                     name="apellido"
+                    required
                     
                 />
             </div>
@@ -40,6 +42,8 @@ const Formulario = () => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Edad del Cliente"
                     name="edad"
+                    min={1}
+                    max={130}
                     required
                 />
             </div>
@@ -55,6 +59,7 @@ const Formulario = () => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Fecha del Cliente"
                     name="fecha"
+                    required
                 />
             </div>
 
